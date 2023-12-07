@@ -26,7 +26,6 @@ setup(
     description=description_short,
     long_description=description,
     author='Arbuzov Vyacheslav, Petukhov Maksim',
-    author_email='Vyacheslav Arbuzov <noreply@github.com>',
     url='https://github.com/arbuzovv/pyrusquant',
     packages=find_packages(),
     license=text_license,
