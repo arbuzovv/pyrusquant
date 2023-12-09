@@ -11,12 +11,12 @@ pip install pyrusquant
 ### Getting Started
 
 It is possible to import data from a variety of sources with one rusquant
-function: `get_symbols()`. For example:
+function: `get_symbols()` and datasource (as example gigapack). For example:
 
 ``` r
-rom pyrusquant import symbols_gigapack
-df0 = symbols_gigapack.get_symbols(symbols=['SBER', 'LKOH'], fake=True, type_data='candles')
-df1 = symbols_gigapack.get_symbols(symbols=['SBER', 'LKOH'], fake=False, type_data='candles')
-df2 = symbols_gigapack.get_symbols(symbols=['SBER', 'LKOH'], fake=True, type_data='tech')
-df3 = symbols_gigapack.get_symbols(symbols=['SBER', 'LKOH'], fake=False, type_data='tech')
+import pyrusquant.symbols_gigapack as gigapack
+df0 = gigapack.get_symbols(symbols=['SBER', 'LKOH'], fake=True, type_data='candles')
+df1 = gigapack.get_symbols(symbols=['SBER', 'LKOH'], fake=False, type_data='candles')
+df2 = gigapack.get_symbols(symbols=['SBER', 'LKOH'], fake=True, type_data='tech')
+df3 = gigapack.get_symbols(symbols=['SBER', 'LKOH'], fake=False, type_data='tech')
 ```
