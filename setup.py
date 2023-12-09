@@ -1,10 +1,7 @@
-import sys
 from setuptools import setup, find_packages
 
 import pyrusquant
 
-if sys.version_info < (3, 7):
-    raise RuntimeError("pyrusquant requires Python 3.7+")
 
 description_short = """
 Pyrusquant is a package for interaction with alternative data, trading API of different exchanges and brokers'    
@@ -17,7 +14,7 @@ with open('README.md') as file:
     text_license = file.read()
 
 with open('requirements.txt') as file:
-    requirements = file.read().splitlines()
+    requirements = [pack.replace('==', '>=') for pack in file.read().splitlines()]
 
 
 setup(
@@ -25,7 +22,9 @@ setup(
     version=pyrusquant.__version__,
     description=description_short,
     long_description=description,
+    long_description_content_type='text/markdown',
     author='Arbuzov Vyacheslav, Petukhov Maksim',
+    author_email='Vyacheslav Arbuzov <noreply@github.com>',
     url='https://github.com/arbuzovv/pyrusquant',
     packages=find_packages(),
     license=text_license,
@@ -35,4 +34,5 @@ setup(
         'Operating System :: OS Independent',
         'Programming Language :: Python :: 3',
     ],
+    python_requires=">=3.7",
 )
