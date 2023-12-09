@@ -14,8 +14,8 @@ It is possible to import data from a variety of sources with one rusquant
 function: `get_symbols()`. For example:
 
 ``` r
-import pyrusquant
-get_symbols(symbols=['SBER', 'LKOH'], fake=True, type_data='candles')
+rom pyrusquant import symbols_gigapack
+df0 = get_symbols(symbols=['SBER', 'LKOH'], fake=True, type_data='candles')
 df1 = get_symbols(symbols=['SBER', 'LKOH'], fake=False, type_data='candles')
 df2 = get_symbols(symbols=['SBER', 'LKOH'], fake=True, type_data='tech')
 df3 = get_symbols(symbols=['SBER', 'LKOH'], fake=False, type_data='tech')
