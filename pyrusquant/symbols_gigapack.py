@@ -4,11 +4,12 @@ import datetime as dt
 import requests
 import pandas as pd
 
-DFLT_DT_FROM_STR = (dt.datetime.now() - dt.timedelta(30)).strftime('%Y-%m-%d')
-DFLT_DT_TO_STR = dt.datetime.now().strftime('%Y-%m-%d')
+DFLT_DT_FROM = (dt.datetime.now() - dt.timedelta(30))
+DFLT_DT_TO = dt.datetime.now()
+MASK_DATE = '%Y-%m-%d'
 
 
-def get_symbols(symbols, dt_from=DFLT_DT_FROM_STR, dt_to=DFLT_DT_TO_STR, field='close',
+def get_symbols(symbols, dt_from=DFLT_DT_FROM, dt_to=DFLT_DT_TO, field='close',
                 type_data='candles', fake=False, reps=1, trim=0.1):
 
     df = pd.DataFrame()
@@ -35,8 +36,8 @@ def get_symbols(symbols, dt_from=DFLT_DT_FROM_STR, dt_to=DFLT_DT_TO_STR, field='
             print(f'Err parsing {symbol}:', err)
 
     if dt_from:
-        df = df[df['date'] >= dt_from]
+        df = df[df['date'] >= dt_from.strftime(MASK_DATE)]
     if dt_to:
-        df = df[df['date'] <= dt_to]
+        df = df[df['date'] <= dt_to.strftime(MASK_DATE)]
 
     return df.sort_values(['date', 'symbol'])

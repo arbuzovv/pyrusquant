@@ -13,9 +13,6 @@ with open('README.md') as file:
 with open('README.md') as file:
     text_license = file.read()
 
-with open('requirements.txt') as file:
-    requirements = [pack.replace('==', '>=') for pack in file.read().splitlines()]
-
 
 setup(
     name='pyrusquant',
@@ -24,11 +21,14 @@ setup(
     long_description=description,
     long_description_content_type='text/markdown',
     author='Arbuzov Vyacheslav, Petukhov Maksim',
-    author_email='Vyacheslav Arbuzov <noreply@github.com>',
     url='https://github.com/arbuzovv/pyrusquant',
     packages=find_packages(),
     license=text_license,
-    install_requires=requirements,
+    install_requires=[
+        'aiohttp>=3.9.1',
+        'pandas>=2.1.3',
+        'requests>=2.31.0',
+    ],
     classifiers=[
         'License :: OSI Approved :: Apache Software License',
         'Operating System :: OS Independent',
