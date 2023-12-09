@@ -15,8 +15,8 @@ function: `get_symbols()`. For example:
 
 ``` r
 rom pyrusquant import symbols_gigapack
-df0 = get_symbols(symbols=['SBER', 'LKOH'], fake=True, type_data='candles')
-df1 = get_symbols(symbols=['SBER', 'LKOH'], fake=False, type_data='candles')
-df2 = get_symbols(symbols=['SBER', 'LKOH'], fake=True, type_data='tech')
-df3 = get_symbols(symbols=['SBER', 'LKOH'], fake=False, type_data='tech')
+df0 = symbols_gigapack.get_symbols(symbols=['SBER', 'LKOH'], fake=True, type_data='candles')(symbols=['SBER', 'LKOH'], fake=True, type_data='candles')
+df1 = symbols_gigapack.get_symbols(symbols=['SBER', 'LKOH'], fake=False, type_data='candles')
+df2 = symbols_gigapack.get_symbols(symbols=['SBER', 'LKOH'], fake=True, type_data='tech')
+df3 = symbols_gigapack.get_symbols(symbols=['SBER', 'LKOH'], fake=False, type_data='tech')
 ```
