@@ -1,0 +1,6 @@
+/build/
+/venv/
+/pyrusquant.egg-info/
+/dist/
+.idea
+.DS_Store
