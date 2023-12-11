@@ -14,7 +14,7 @@ It is possible to import data from a variety of sources with one rusquant
 function: `get_symbols()` and datasource (as example gigapack). For example:
 
 ``` r
-import pyrusquant.symbols_gigapack as gigapack
+from pyrusquant.services import gigapack
 df0 = gigapack.get_symbols(symbols=['SBER', 'LKOH'], fake=True, type_data='candles')
 df1 = gigapack.get_symbols(symbols=['SBER', 'LKOH'], fake=False, type_data='candles')
 df2 = gigapack.get_symbols(symbols=['SBER', 'LKOH'], fake=True, type_data='tech')
